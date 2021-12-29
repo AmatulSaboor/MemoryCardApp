@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Level 3</title>
+		<link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="Assetes/memory_card.css">
+		<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	</head>
+	<body>	
+		<section class="hundred wrapper">
+			<div class="container">
+
+		
+				<!-- START SCREEN-->
+				<div class="popup start-popup">
+					<div class="inner-popup">
+						<div class="rules">
+							<h1>Welcome</h1>
+							<h2>Level 3</h2>
+							<ul>
+								<li>Match all the pairs of cards</li>
+								<li>You have 16 cards</li>
+								<li>The cards will be shuffled after each attempt</li>
+								<li>You will get 4 points for each match</li>
+								<li>You have 100 secs to match the cards</li>
+								<li>You have 32 no of clicks to win the game</li>
+								<li>Every wrong match will deduct 1 point, if the score is greater than 0</li>
+							</ul>
+						</div>
+						<button onclick="initialize(100, 32, 16, 3)" class="start">Start</button>
+					</div>
+				</div>
+
+
+				<!-- RESUME -->
+				<div class="popup hide pausePopup">
+					<button onclick="resume()" class="start">Resume</button>
+				</div>
+
+
+				<!-- TOP BAR -->
+				<div class="detail-box">
+					<p class="detail_time"><span class="time">100</span><span class="sec"> Secs</span></p>
+					<p class="detail_score">Score : <span class="score">0</span></p>
+					<p class="detail_cards">Cards : <span class="cards-remaining">16</span></p>
+					<p class="detail_click">Clicks : <span class="clicks">32</span></p>
+					<button onclick="pause()" class="start">Pause</button>
+				</div>
+
+
+				<!-- GAME BOARD -->
+				<section class="memory-game">
+					<div class="memory-card active" data-framework="flower">
+						<img src="Assetes/Images/Level1/flower.png" alt="flower" class="front-face">
+						<img src="Assetes/Images/Level1/back.png" alt="back" class="back-face">
+					</div>
+					<div class="memory-card active" data-framework="flower">
+						<img src="Assetes/Images/Level1/flower.png" alt="flower" class="front-face">
+						<img src="Assetes/Images/Level1/back.png" alt="back" class="back-face">
+					</div>
+					<div class="memory-card active" data-framework="leaves">
+						<img src="Assetes/Images/Level1/leaves.png" alt="leaves" class="front-face">
+						<img src="Assetes/Images/Level1/back.png" alt="back" class="back-face">
+					</div>
+					<div class="memory-card active" data-framework="leaves">
+						<img src="Assetes/Images/Level1/leaves.png" alt="leaves" class="front-face">
+						<img src="Assetes/Images/Level1/back.png" alt="back" class="back-face">
+					</div>
+					<div class="memory-card active" data-framework="circle">
+						<img src="Assetes/Images/Level1/circle.png" alt="circle" class="front-face">
+						<img src="Assetes/Images/Level1/back.png" alt="back" class="back-face">
+					</div>
+					<div class="memory-card active" data-framework="circle">
+						<img src="Assetes/Images/Level1/circle.png" alt="circle" class="front-face">
+						<img src="Assetes/Images/Level1/back.png" alt="back" class="back-face">
+					</div>
+					<div class="memory-card active" data-framework="glasses">
+						<img src="Assetes/Images/Level1/glasses.png" alt="glasses" class="front-face">
+						<img src="Assetes/Images/Level1/back.png" alt="back" class="back-face">
+					</div>
+					<div class="memory-card active" data-framework="glasses">
+						<img src="Assetes/Images/Level1/glasses.png" alt="glasses" class="front-face">
+						<img src="Assetes/Images/Level1/back.png" alt="back" class="back-face">
+					</div>
+					<div class="memory-card active" data-framework="box">
+						<img src="Assetes/Images/Level1/box.png" alt="box" class="front-face">
+						<img src="Assetes/Images/Level1/back.png" alt="back" class="back-face">
+					</div>
+					<div class="memory-card active" data-framework="box">
+						<img src="Assetes/Images/Level1/box.png" alt="box" class="front-face">
+						<img src="Assetes/Images/Level1/back.png" alt="back" class="back-face">
+					</div>
+					<div class="memory-card active" data-framework="settings">
+						<img src="Assetes/Images/Level1/settings.png" alt="settings" class="front-face">
+						<img src="Assetes/Images/Level1/back.png" alt="back" class="back-face">
+					</div>
+					<div class="memory-card active" data-framework="settings">
+						<img src="Assetes/Images/Level1/settings.png" alt="settings" class="front-face">
+						<img src="Assetes/Images/Level1/back.png" alt="back" class="back-face">
+					</div>
+					<div class="memory-card active" data-framework="drive">
+						<img src="Assetes/Images/Level1/drive.png" alt="drive" class="front-face">
+						<img src="Assetes/Images/Level1/back.png" alt="back" class="back-face">
+					</div>
+					<div class="memory-card active" data-framework="drive">
+						<img src="Assetes/Images/Level1/drive.png" alt="drive" class="front-face">
+						<img src="Assetes/Images/Level1/back.png" alt="back" class="back-face">
+					</div>
+					<div class="memory-card active" data-framework="sunflower">
+						<img src="Assetes/Images/Level1/sunflower.png" alt="sunflower" class="front-face">
+						<img src="Assetes/Images/Level1/back.png" alt="back" class="back-face">
+					</div>
+					<div class="memory-card active" data-framework="sunflower">
+						<img src="Assetes/Images/Level1/sunflower.png" alt="sunflower" class="front-face">
+						<img src="Assetes/Images/Level1/back.png" alt="back" class="back-face">
+					</div>
+				</section>
+
+
+				<!-- SOUND EFFECTS -->
+				<audio id = "matchSound">
+					<source src="Assetes/Audios/matchSound.mp3" type="audio/mp3">
+					<source src="Assetes/Audios/matchSound.wav" type="audio/wav">
+				</audio>
+				<audio id = "winningSound">
+					<source src="Assetes/Audios/winningSound.mp3" type="audio/mp3">
+					<source src="Assetes/Audios/winningSound.wav" type="audio/wav">
+				</audio>
+			</div>
+		</section>
+
+		<!-- WIN SCREEN -->
+		<div class="popup winpopup hide">
+			<div class="inner-popup">
+				<div class="reason"></div>
+				<div class="showDetails">
+					<span class="details">Remaining Time : <span class="finalTime"></span></span>
+					<span class="details">Remaining Cards : <span class="finalCardsRemaining"></span></span>					
+					<span class="details">Score : <span class="finalScore"></span></span>
+				</div>
+				<a href="index.html" class="start">Home</a>
+			</div>
+		</div>
+
+
+		<!-- LOST SCREEN -->
+
+		<div class="popup lostpopup hide">
+			<div class="inner-popup">
+				<div class="reason"></div>
+				<div class="showDetails">
+					<span class="details">Remaining Time : <span class="finalTime"></span></span>
+					<span class="details">Remaining Cards : <span class="finalCardsRemaining"></span></span>
+					<span class="details">Score : <span class="finalScore"></span></span>
+				</div>
+				<button onclick="playAgainLevel3()" class="start play-again">Play Agian</button>
+				<button onclick="cancel()" class="start cancel">Cancel</button>
+			</div>
+		</div>
+
+		
+		<!-- ADDING JS FILE -->
+		<script src="Assetes/memory_card.js"></script>
+	</body>
+</html>

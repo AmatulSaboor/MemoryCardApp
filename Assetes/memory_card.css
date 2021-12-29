@@ -1,0 +1,207 @@
+
+/* GENERAL */
+
+*{
+	padding: :0;
+	margin:0;
+	box-sizing :border-box;
+	font-family: 'Dancing Script', cursive;
+}
+body{
+	background-color: #ead4a2;
+}
+.hundred{
+	width: 100%;
+	float: left;
+}
+.container{
+	width: 100%;
+	margin:auto;
+	max-width: 1024px;
+}
+.wrapper {
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position:relative;
+}
+.title{color:#67477c;font-size:94px;font-weight:700}
+.row{width:100%;float:left;}
+.row-container{max-width:560px}
+.row .col{width:24%;float:left;background:#67477c;height:130px;margin:0.5%;}
+.row .col.bg1{background: url(Images/Level1/flower.png), rgba(103, 71, 124, 0.6);background-size:cover;}
+.row .col.bg2{background: url(Images/Level1/circle.png), rgba(103, 71, 124, 0.6);background-size:cover;}
+.row .col.bg3{background: url(Images/Level1/glasses.png), rgba(103, 71, 124, 0.6);background-size:cover;}
+.detail-box {
+    position: fixed;
+    right: 11%;
+    width: 200px;
+    background: #fecc40;
+    padding: 40px 40px 0 40px;
+    top:0;}
+.detail-box:before{
+	content:"";
+	position:absolute;
+	bottom:-100px;left:0;
+	border-top:100px solid #fecc40;
+	border-right:100px solid transparent;
+	border-left:100px solid transparent;
+}
+.detail-box *{font-family: sans-serif;}
+.detail-box p{margin:10px 0;}
+.detail-box .detail_time{font-size:34px;}
+.detail-box .detail_time .sec{font-size:24px}
+.detail-box .detail_score{font-size:24px;}
+.detail-box .detail_cards{font-size:24px;}
+.detail-box .detail_click{font-size:24px;}
+.detail-box .start{background: #67477c;
+    color: #fecc40;
+    border: 0;
+    padding: 10px;
+    width: 120px;cursor:pointer;
+    border-radius: 10px;
+    font-size: 24px;margin-top: 30px;
+    font-weight: 700;}
+
+/* POPUPS */
+
+.popup{
+	position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    /*positioning the start button*/
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.hide{
+	display:none;
+}
+body .popup .play-again,
+body .popup .cancel{
+	font-size:24px
+}
+.popup .start{
+	cursor: pointer;
+	color: #67477c;
+    font-size: 42px;
+    height: 200px;
+    width: 200px;
+    text-transform: uppercase;
+    border-radius: 100%;
+    border: 10px solid #67477c;
+    box-shadow: 0 0 10px rgba(0,0,0,0.7);
+    outline: none;
+    margin:30px auto; 
+    background: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration:none;
+}
+.showDetails{
+    position: absolute;
+    color: #FFF;
+    right: 0;
+    width: 425px;
+    top: 25%;
+}
+.showDetails .details{
+    font-size: 40px;
+    width: 100%;
+    float: left;
+    margin: 10px 0;
+}
+.rules {
+    position: absolute;
+    color: #FFF;
+    right: 0;
+    width: 470px;
+    top:25%;
+}
+.rules h1{font-size:54px}
+.rules h2{font-size:46px}
+.rules ul,.rules ol{padding:0;margin:30px 0;}
+.rules li{padding:0;font-size:24px}
+/* TOP BAR */
+
+.top-div{
+	margin:auto;
+	width:640px;
+	display: flex;
+}
+.top-bar{
+	width: 33.333%;
+}
+
+/* SOUND EFFECTS */
+
+#winningSound, #matchSound{
+	visibility: hidden;
+	position: absolute;
+}
+
+
+/* MAIN CSS */
+
+.memory-game{
+	margin:auto;
+	width:640px;
+	display:flex;
+	flex-wrap: wrap;
+}
+.reason{
+	color: white;
+	font-size: 35px;
+}
+.memory-card{
+	width:150px;
+	height:150px;
+	position:relative;
+	margin:5px;
+	transform:scale(1);
+	transform-style: preserve-3d;
+	transition: transform .5s;
+}
+.back-face{
+	cursor: pointer;
+}
+.front-face{
+	transform:rotateY(180deg);
+}
+.memory-card.flip{
+	transform:rotateY(180deg);
+}
+.memory-card.active:active {
+    transform: scale(.97);
+    transition: transform 2s;
+}
+.back-face{
+	position: absolute;
+	width: 100%;
+	height: :100%;
+	padding: 20px;
+	border-radius: 5px;
+	background:#67477c;
+	backface-visibility: hidden;
+}
+.front-face{
+	position: absolute;
+	width: 100%;
+	height: :100%;
+	padding: 20px;
+	border-radius: 5px;
+	backface-visibility: hidden;
+	background:rgba(103, 71, 124, 0.6);
+}
+.winpopup{
+	background:url(Images/winGIF.gif), rgba(0,0,0,0.8);
+	background-repeat: no-repeat;
+    background-position:10%;
+}
